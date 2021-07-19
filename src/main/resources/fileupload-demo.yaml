@@ -1,0 +1,57 @@
+openapi: 3.0.3
+info:
+  title: File upload demo
+  version: 1.0.0
+servers:
+  - url: http://localhost:9999/api
+components:
+  schemas:
+    Dummy:
+      type: object
+      properties:
+        key:
+          type: string
+        value:
+          type: string
+paths:
+  /fileuploadSingle:
+    post:
+      description: Single file upload
+      operationId: fileUploadSingle
+      requestBody:
+        content:
+          application/octet-stream:
+            schema:
+              # a binary file of any type
+              type: string
+              description: Definition file
+              format: binary
+        required: true
+      responses:
+        201:
+          description: Single file upload response
+          content: { }
+
+  /fileuploadMultiPart:
+    post:
+      description: Mulitpart file upload
+      operationId: fileUploadMultipart
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - definitionFile
+              properties:
+                definitionFile:
+                  maxLength: 5000000
+                  minLength: 1
+                  type: string
+                  description: Definition file
+                  format: binary
+        required: true
+      responses:
+        201:
+          description: Multipart upload response
+          content: { }
