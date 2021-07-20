@@ -40,3 +40,11 @@ Browse to http://localhost:9999/swagger-ui/index.html
 #### screenshot
 ![4.3.1 Screenshot](doc/img/4.3.1_screenshot.png?raw=true "4.3.1 Screenshot")
 Browse to http://localhost:9998/swagger-ui/index.html
+
+### Running with OpenAPI Generator 6.0.0-SNAPSHOT
+`mvn clean package jetty:run -Dopenapi-generator-maven-plugin.version=6.0.0-SNAPSHOT -Djetty-port=9997`
+#### screenshot
+
+![6.0.0-SNAPSHOT_screenshot](doc/img/6.0.0-SNAPSHOT_screenshot.png?raw=true "6.0.0-SNAPSHOT Screenshot")
+Browse to http://localhost:9997/swagger-ui/index.html
+

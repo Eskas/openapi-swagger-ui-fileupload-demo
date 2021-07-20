@@ -14,24 +14,6 @@ components:
         value:
           type: string
 paths:
-  /fileuploadSingle:
-    post:
-      description: Single file upload
-      operationId: fileUploadSingle
-      requestBody:
-        content:
-          application/octet-stream:
-            schema:
-              # a binary file of any type
-              type: string
-              description: Definition file
-              format: binary
-        required: true
-      responses:
-        201:
-          description: Single file upload response
-          content: { }
-
   /fileuploadMultiPart:
     post:
       description: Mulitpart file upload
